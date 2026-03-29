@@ -48,6 +48,7 @@ import { StageSelect } from "~/components/StageSelect";
 import { SubmitButton } from "~/components/SubmitButton";
 import { SubNav, SubNavLink } from "~/components/SubNav";
 import { Table } from "~/components/Table";
+import { Trophy } from "~/components/Trophy";
 import { WeaponSelect } from "~/components/WeaponSelect";
 import type { CustomFieldRenderProps } from "~/form/FormField";
 import { SendouForm } from "~/form/SendouForm";
@@ -103,6 +104,7 @@ export default function ComponentsShowcasePage() {
 	return (
 		<Main className="stack lg">
 			<h1>Components</h1>
+			<Trophy />
 			{SECTIONS.map(({ id, component: Component }) => (
 				<Component key={id} id={id} />
 			))}
