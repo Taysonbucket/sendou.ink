@@ -26,9 +26,22 @@ export function Trophy() {
 			canvas,
 			resolution: { width: 128, height: 128, scale: 4 },
 		});
+
 		viewer.setState(JSON.parse(modelState));
-		viewer.enableCameraControls({ pan: false, rotate: true, zoom: true });
+		viewer.cameraMode = "spin";
+
 		viewer.startRenderLoop();
+		viewer.enableCameraControls({
+			spinInertiaFactor: 0.95,
+			pan: false,
+			rotate: true,
+			zoom: true,
+			useFixedOnInteract: {
+				enabled: true,
+				delayBeforeRestore: 1000,
+				restoreTime: 1000,
+			},
+		});
 
 		viewerRef.current = viewer;
 	};
